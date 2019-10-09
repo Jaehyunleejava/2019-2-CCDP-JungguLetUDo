@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ParkingApplication</string>
+    <string name="str_main_comment">(앱이름)은 무인으로 운영되는\n24시간 장애인주차구역 관리시스템입니다.</string>
+</resources>
