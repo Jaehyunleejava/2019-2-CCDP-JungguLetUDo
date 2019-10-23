@@ -22,27 +22,20 @@ public class MainActivity extends BaseActivity {
     private static CameraPreview surfaceView;
     private static Camera mCamera;
     public static MainActivity getInstance;
-    private TextView tv_outPut;
+    private TextView mTvOutput;
 
     private SurfaceHolder holder;
+    String mUrl = "http://ec2-15-164-211-230.ap-northeast-2.compute.amazonaws.com/index.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         MoveActivityUtil.getInstance().moveIntroActivity(mActivity);
         //
-        //        // 위젯에 대한 참조.
-        tv_outPut = (TextView) findViewById(R.id.tv_outPut);
+        //        // 위젯에 대한 참조
 
         // URL 설정.
-        String url = "https://ec2-15-164-211-230.ap-northeast-2.compute.amazonaws.com/index.php";
-
-        // AsyncTask를 통해 HttpURLConnection 수행.
-        NetworkTask networkTask = new NetworkTask(url, null);
-        networkTask.execute();
     }
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -67,6 +60,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         // SurfaceView를 상속받은 레이아웃을 정의한다.
+        mTvOutput = (TextView) findViewById(R.id.tv_outPut);
         surfaceView = (CameraPreview) findViewById(R.id.camera);
 
 
@@ -74,6 +68,9 @@ public class MainActivity extends BaseActivity {
         holder = surfaceView.getHolder();
         holder.addCallback(surfaceView);
         holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+
+        // AsyncTask를 통해 HttpURLConnection 수행.
+        new NetworkTask(mUrl,null).execute();
     }
 
     public class NetworkTask extends AsyncTask<Void, Void, String> {
@@ -102,7 +99,7 @@ public class MainActivity extends BaseActivity {
             super.onPostExecute(s);
             Log.d("msg",""+s);
             //doInBackground()로 부터 리턴된 값이 onPostExecute()의 매개변수로 넘어오므로 s를 출력한다.
-            tv_outPut.setText(s);
+            mTvOutput.setText(s);
         }
     }
 }
