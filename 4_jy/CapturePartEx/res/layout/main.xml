@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/full_screen"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF" >
+
+    <!--
+	일부영역 캡쳐에 추가될 이미지들은 모두 이 캡쳐 screen 안에 있어야 만 한다.
+	-->
+
+	<RelativeLayout android:id="@+id/screen"
+		android:layout_width="fill_parent" android:layout_height="240dip"
+		android:layout_alignParentTop="true" android:layout_marginTop="0dp"
+		android:layout_marginLeft="0dp">
+
+		<ImageView android:id="@+id/imageView0"
+			android:layout_width="fill_parent" android:layout_height="240dip" />
+	</RelativeLayout>
+
+
+  <RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<!-- 전체 스크린샷 -->
+		<Button android:id="@+id/btn2" android:layout_width="100dp"
+			android:layout_height="50dp" android:text="전체스샷"
+			android:layout_alignParentTop="true" android:layout_marginTop="350dp"
+			android:layout_marginLeft="50dp" />
+		
+		<!-- 영역 스크린샷 -->
+		<Button android:id="@+id/btn" android:layout_width="100dp"
+			android:layout_height="50dp" android:text="일부스샷"
+			android:layout_alignParentTop="true" android:layout_marginTop="350dp"
+			android:layout_marginLeft="170dp" />
+		
+	</RelativeLayout>
+
+</RelativeLayout>
