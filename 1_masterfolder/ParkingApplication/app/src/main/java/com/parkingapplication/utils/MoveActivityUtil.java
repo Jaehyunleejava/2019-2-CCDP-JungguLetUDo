@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import com.parkingapplication.R;
 import com.parkingapplication.activity.IntroActivity;
+import com.parkingapplication.activity.PasswordActivity;
 
 /**
  * mj_application_v1
@@ -34,6 +35,12 @@ public class MoveActivityUtil {
     public synchronized void moveIntroActivity(final Activity activity) {
         Intent intent = new Intent(activity, IntroActivity.class);
         activity.startActivityForResult(intent, REQUEST_INTRO);
+        activity.overridePendingTransition(R.anim.anim_fade_in, R.anim.anim_fade_out);
+    }
+
+    public synchronized void movePasswordActivity(final Activity activity) {
+        Intent intent = new Intent(activity, PasswordActivity.class);
+        activity.startActivity(intent);
         activity.overridePendingTransition(R.anim.anim_fade_in, R.anim.anim_fade_out);
     }
 }

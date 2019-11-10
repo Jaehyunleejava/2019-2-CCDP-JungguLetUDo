@@ -83,6 +83,8 @@
     <dimen name="size_81">81dp</dimen>
     <dimen name="size_82">82dp</dimen>
     <dimen name="size_83">83dp</dimen>
+    <dimen name="size_85">85dp</dimen>
+    <dimen name="size_90">90dp</dimen>
     <dimen name="size_100">100dp</dimen>
     <dimen name="size_140">140dp</dimen>
     <dimen name="size_180">180dp</dimen>

@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             android:text="@string/str_main_comment"
             android:textSize="@dimen/size_12"
+            android:fontFamily="@font/namsan_m"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/img_logo"
@@ -44,7 +45,7 @@
             />
 
         <TextView
-            android:id="@+id/tv_outPut"
+            android:id="@+id/txt_outPut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="출력 공간"
