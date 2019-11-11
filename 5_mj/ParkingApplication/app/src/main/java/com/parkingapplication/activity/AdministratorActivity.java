@@ -1,6 +1,11 @@
 package com.parkingapplication.activity;
 
+import android.os.Bundle;
 import android.widget.BaseExpandableListAdapter;
+
+import androidx.annotation.Nullable;
+
+import com.parkingapplication.R;
 
 /**
  * ParkingApplication
@@ -10,4 +15,10 @@ import android.widget.BaseExpandableListAdapter;
  * Description:
  */
 public class AdministratorActivity extends BaseActivity {
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_administrator);
+    }
 }

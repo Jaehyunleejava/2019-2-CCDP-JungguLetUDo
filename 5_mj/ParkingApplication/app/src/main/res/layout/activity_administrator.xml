@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <!--로고-->
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="@dimen/size_27"
+        android:layout_height="@dimen/size_27"
+        android:layout_marginTop="@dimen/size_13"
+        android:src="@drawable/img_logo"
+        app:layout_constraintRight_toLeftOf="@id/txt_logo_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--한글 이름-->
+    <TextView
+        android:id="@+id/txt_logo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_13"
+        android:fontFamily="@font/hangang_eb"
+        android:text="@string/app_name"
+        android:textColor="@color/color_6F696B"
+        android:textSize="@dimen/size_23"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/img_logo"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

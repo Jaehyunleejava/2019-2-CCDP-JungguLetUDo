@@ -1,9 +1,9 @@
 package com.parkingapplication.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,12 +33,38 @@ public class PasswordActivity extends BaseActivity implements View.OnClickListen
     private TextView mTxtMaskingThree;
     private TextView mTxtMaskingFour;
 
+    private LinearLayout mLlMasking;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password);
 
         initView();
+    }
+
+    /**
+     * init View..
+     */
+    private void initView() {
+        mTxtMaskingOne = findViewById(R.id.txt_masking_one);
+        mTxtMaskingTwo = findViewById(R.id.txt_masking_two);
+        mTxtMaskingThree = findViewById(R.id.txt_masking_three);
+        mTxtMaskingFour = findViewById(R.id.txt_masking_four);
+        mLlMasking = findViewById(R.id.ll_password);
+
+        //setListener
+        findViewById(R.id.txt_password_one).setOnClickListener(this);
+        findViewById(R.id.txt_password_two).setOnClickListener(this);
+        findViewById(R.id.txt_password_three).setOnClickListener(this);
+        findViewById(R.id.txt_password_four).setOnClickListener(this);
+        findViewById(R.id.txt_password_five).setOnClickListener(this);
+        findViewById(R.id.txt_password_six).setOnClickListener(this);
+        findViewById(R.id.txt_password_seven).setOnClickListener(this);
+        findViewById(R.id.txt_password_eight).setOnClickListener(this);
+        findViewById(R.id.txt_password_nine).setOnClickListener(this);
+        findViewById(R.id.txt_password_zero).setOnClickListener(this);
+        findViewById(R.id.txt_password_remove).setOnClickListener(this);
     }
 
     // Ctrl + i
@@ -77,19 +103,26 @@ public class PasswordActivity extends BaseActivity implements View.OnClickListen
         return mMaskingStack.size()<4;
     }
 
+    /**
+     * 비밀 번호 체크 Func.
+     * @return  true -> 비밀번호 4자리수 승인 완료, false -> 비밀번호 틀림.
+     */
     private boolean checkPassword(){
         for (int i=mMaskingStack.size()-1; i>=0;i--){
             int k = getCastId(mMaskingStack.pop());
-            if (k==mPassword[i]) {
-                continue;
-            }
-            else {
+            // 하나라도 숫자가 다른경우 false 리턴
+            if (k != mPassword[i]) {
                 return false;
             }
         }
         return true;
     }
 
+    /**
+     * View Id 값을 알맞은 값으로 변환.
+     * @param id
+     * @return
+     */
     private int getCastId(int id){
         switch (id){
             case R.id.txt_password_one:
@@ -125,6 +158,9 @@ public class PasswordActivity extends BaseActivity implements View.OnClickListen
         }
     }
 
+    /**
+     * 마스킹 View 표시.
+     */
     private void maskingShow(){
         switch(mMaskingStack.size()){
             default:
@@ -157,36 +193,47 @@ public class PasswordActivity extends BaseActivity implements View.OnClickListen
                 mTxtMaskingThree.setVisibility(View.VISIBLE);
                 mTxtMaskingFour.setVisibility(View.VISIBLE);
                 if (checkPassword()){
-                    Toast.makeText(mContext,"correct",Toast.LENGTH_SHORT).show();
+                    passwordRight();
                 } else {
-                    Toast.makeText(mContext,"wrong",Toast.LENGTH_SHORT).show();
-                    mMaskingStack.clear();
-                    mTxtMaskingOne.setVisibility(View.INVISIBLE);
-                    mTxtMaskingTwo.setVisibility(View.INVISIBLE);
-                    mTxtMaskingThree.setVisibility(View.INVISIBLE);
-                    mTxtMaskingFour.setVisibility(View.INVISIBLE);
+                    passwordWrong();
                 }
                 break;
         }
     }
 
-    private void initView() {
-        mTxtMaskingOne = findViewById(R.id.txt_masking_one);
-        mTxtMaskingTwo = findViewById(R.id.txt_masking_two);
-        mTxtMaskingThree = findViewById(R.id.txt_masking_three);
-        mTxtMaskingFour = findViewById(R.id.txt_masking_four);
-
-        //setListener
-        findViewById(R.id.txt_password_one).setOnClickListener(this);
-        findViewById(R.id.txt_password_two).setOnClickListener(this);
-        findViewById(R.id.txt_password_three).setOnClickListener(this);
-        findViewById(R.id.txt_password_four).setOnClickListener(this);
-        findViewById(R.id.txt_password_five).setOnClickListener(this);
-        findViewById(R.id.txt_password_six).setOnClickListener(this);
-        findViewById(R.id.txt_password_seven).setOnClickListener(this);
-        findViewById(R.id.txt_password_eight).setOnClickListener(this);
-        findViewById(R.id.txt_password_nine).setOnClickListener(this);
-        findViewById(R.id.txt_password_zero).setOnClickListener(this);
-        findViewById(R.id.txt_password_remove).setOnClickListener(this);
+    private void passwordRight() {
+        Toast.makeText(mContext,"correct",Toast.LENGTH_SHORT).show();
+        MoveActivityUtil.getInstance().moveAdminActivity(mActivity);
     }
+
+    private void passwordWrong(){
+        Toast.makeText(mContext,"wrong",Toast.LENGTH_SHORT).show();
+        Animation shakeAni = AnimationUtils.loadAnimation(mContext,R.anim.anim_shake);
+        mLlMasking.animate().cancel();
+        mLlMasking.startAnimation(shakeAni);
+        shakeAni.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                Logger.d("TEST:: 애니메이션 시작");
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Logger.d("TEST:: 애니메이션 끝");
+                mMaskingStack.clear();
+
+                mTxtMaskingOne.setVisibility(View.INVISIBLE);
+                mTxtMaskingTwo.setVisibility(View.INVISIBLE);
+                mTxtMaskingThree.setVisibility(View.INVISIBLE);
+                mTxtMaskingFour.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+    }
+
+
 }
