@@ -24,7 +24,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private static CameraPreview surfaceView;
     private static Camera mCamera;
     public static MainActivity getInstance;
-    private TextView mTxtOutput;
 
     private SurfaceHolder holder;
     String mUrl = "http://ec2-15-164-211-230.ap-northeast-2.compute.amazonaws.com/index.php";
@@ -96,7 +95,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         // 클래스 내에서 초기화 할수 있는 영역
         // SurfaceView를 상속받은 레이아웃을 정의한다.
-        mTxtOutput = (TextView) findViewById(R.id.txt_outPut);
         surfaceView = (CameraPreview) findViewById(R.id.camera);
 
 
@@ -135,7 +133,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             super.onPostExecute(s);
             Log.d("msg",""+s);
             //doInBackground()로 부터 리턴된 값이 onPostExecute()의 매개변수로 넘어오므로 s를 출력한다.
-            mTxtOutput.setText(s);
         }
     }
 }
