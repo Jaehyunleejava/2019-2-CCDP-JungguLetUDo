@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">장애인 주차구역 지킴이</string>
-    <string name="str_main_comment">(앱이름)은 무인으로 운영되는\n24시간 장애인주차구역 관리시스템입니다.</string>
+    <string name="str_main_comment">장애인 주차구역 지킴이는 무인으로 운영되는\n24시간 장애인주차구역 관리시스템입니다.</string>
     <string name="txt_password_name">암 호 입 력</string>
     <string name="txt_password">*</string>
     <string name="txt_password_detail">관리자용 암호를 입력해주세요.</string>
@@ -16,4 +16,5 @@
     <string name="txt_password_nine">9</string>
     <string name="txt_password_zero">0</string>
     <string name="txt_password_remove">X</string>
+    <string name="txt_car_name">차량 번호</string>
 </resources>
