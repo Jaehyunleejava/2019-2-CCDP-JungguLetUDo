@@ -3,12 +3,16 @@ package com.parkingapplication;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.hardware.Camera;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
@@ -20,6 +24,8 @@ import com.parkingapplication.networks.network.NetworkRequestTest;
 import com.parkingapplication.utils.Logger;
 import com.parkingapplication.utils.MoveActivityUtil;
 import com.parkingapplication.view.CameraPreview;
+
+import java.io.File;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -37,6 +43,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         MoveActivityUtil.getInstance().moveIntroActivity(mActivity);
     }
 
