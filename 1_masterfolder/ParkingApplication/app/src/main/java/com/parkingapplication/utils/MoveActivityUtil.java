@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.parkingapplication.R;
+import com.parkingapplication.activity.AdministratorActivity;
+import com.parkingapplication.activity.CarResultActivity;
 import com.parkingapplication.activity.IntroActivity;
 import com.parkingapplication.activity.PasswordActivity;
 
@@ -40,6 +42,18 @@ public class MoveActivityUtil {
 
     public synchronized void movePasswordActivity(final Activity activity) {
         Intent intent = new Intent(activity, PasswordActivity.class);
+        activity.startActivity(intent);
+        activity.overridePendingTransition(R.anim.anim_fade_in, R.anim.anim_fade_out);
+    }
+
+    public synchronized void moveAdminActivity(final Activity activity){
+        Intent intent = new Intent(activity, AdministratorActivity.class);
+        activity.startActivity(intent);
+        activity.overridePendingTransition(R.anim.anim_fade_in, R.anim.anim_fade_out);
+    }
+
+    public synchronized void moveCarResultActivity(final Activity activity){
+        Intent intent = new Intent(activity, CarResultActivity.class);
         activity.startActivity(intent);
         activity.overridePendingTransition(R.anim.anim_fade_in, R.anim.anim_fade_out);
     }

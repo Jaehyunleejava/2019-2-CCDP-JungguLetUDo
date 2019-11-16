@@ -3,8 +3,7 @@
     package="com.parkingapplication">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- 네트워크 사용에 대한 퍼미션 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 네트워크 사용에 대한 퍼미션 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,16 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.IntroActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.CarResultActivity"></activity>
+        <activity android:name=".activity.IntroActivity" />
+        <activity android:name=".MainActivity"
+            android:theme="@style/StatusBarTransTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activity.PasswordActivity"></activity>
+        <activity android:name=".activity.PasswordActivity" />
+        <activity android:name=".activity.AdministratorActivity" />
     </application>
 
 </manifest>

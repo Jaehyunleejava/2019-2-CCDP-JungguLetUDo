@@ -1,12 +1,5 @@
 package com.parkingapplication.view;
 
-/**
- * mj_application_v1
- * Class: CameraPreview
- * Created by jsieu on 2019-10-05.
- * <p>
- * Description:
- */
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -23,7 +16,11 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by Administrator on 2017-08-14.
+ * mj_application_v1
+ * Class: CameraPreview
+ * Created by MinjinPark on 2019-10-05.
+ * <p>
+ * Description:
  */
 
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback{
