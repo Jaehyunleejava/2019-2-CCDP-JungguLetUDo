@@ -15,32 +15,19 @@ import java.util.List;
 public class TestModel implements Serializable {
 
     class TestTitle implements Serializable {
-        String title;
+        String result;
 
         public String getTitle() {
-            return title;
+            return result;
         }
 
         @NonNull
         @Override
         public String toString() {
             return "{" +
-                    "title=" + title +
+                    "result=" + result +
                     "}";
         }
     }
 
-    private List<TestTitle> result;
-
-    public List<TestTitle> getResult() {
-        return result;
-    }
-
-    @NonNull
-    @Override
-    public String toString() {
-        return "{" +
-                "result=" + result.toString() +
-                "}";
-    }
 }

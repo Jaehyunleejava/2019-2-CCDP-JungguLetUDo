@@ -36,7 +36,8 @@ public class ClientUtil {
     private final long CONNECTION_DURATION = 1;
 
     private final String KEY_ACCEPT = "accept";
-    private final String VALUE_ACCEPT = "application/json";
+    private final String CONTENT_TYPE = "Content-Type";
+    private final String VALUE_ACCEPT = "application/json; charset=utf-8";
     // [e] Define Value
 
     // [s] Http Code Enum Class
@@ -138,6 +139,7 @@ public class ClientUtil {
             Request origin = chain.request();
 
             Request request = origin.newBuilder()
+                    .header(CONTENT_TYPE, VALUE_ACCEPT)
                     .header(KEY_ACCEPT, VALUE_ACCEPT)
                     .method(origin.method(), origin.body())
                     .build();
