@@ -3,7 +3,6 @@ package com.parkingapplication.networks.dataModel;
 import androidx.annotation.NonNull;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * mj_parking_app
@@ -14,20 +13,21 @@ import java.util.List;
  */
 public class TestModel implements Serializable {
 
-    class TestTitle implements Serializable {
-        String result;
+    String result;
 
-        public String getTitle() {
-            return result;
-        }
+    /**
+     * getter Func.
+     * 차량번호 조회 값
+     * @return result == null 인경우 빈값 리턴.
+     */
+    public String getResult() {
+        return (result == null) ? "" : result;
+    }
 
-        @NonNull
-        @Override
-        public String toString() {
-            return "{" +
-                    "result=" + result +
-                    "}";
-        }
+    @NonNull
+    @Override
+    public String toString() {
+        return "{ result=" + result + "}";
     }
 
 }
