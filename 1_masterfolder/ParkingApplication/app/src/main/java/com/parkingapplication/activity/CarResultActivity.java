@@ -8,10 +8,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.parkingapplication.R;
+import com.parkingapplication.networks.controller.NetworkManager;
+import com.parkingapplication.networks.dataModel.TestModel;
+import com.parkingapplication.networks.listener.ActionResultListener;
+import com.parkingapplication.networks.network.NetworkRequestTest;
+import com.parkingapplication.utils.Logger;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Random;
 
 public class CarResultActivity extends BaseActivity {
 
@@ -30,8 +34,7 @@ public class CarResultActivity extends BaseActivity {
     String formatDate = sdfNow.format(date);
 
     //siren 출력.
-    SoundPool sound = new SoundPool(1, AudioManager.STREAM_ALARM,0);
-
+    SoundPool sound = new SoundPool(1, AudioManager.STREAM_ALARM, 0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +42,15 @@ public class CarResultActivity extends BaseActivity {
         setContentView(R.layout.activity_carresult);
 
         initView();
-        //TODO 서버에서 0 or 1 값 받아야 함
-        bindView(new Random().nextInt(2));
+    }
 
+    @Override
+    public void finish() {
+        super.finish();
+        // 페이지가 넘어 갈때 소리 중지.
+        if(sound != null){
+            sound.stop(streamId);
+        }
     }
 
     private void initView() {
@@ -51,12 +60,16 @@ public class CarResultActivity extends BaseActivity {
         mTxtDate = findViewById(R.id.txt_date);
         mTxtCarNum = findViewById(R.id.txt_car_number);
 
-        mSoundId = sound.load(this,R.raw.siren,1);
+        mSoundId = sound.load(this, R.raw.siren, 1);
+
+        // 차량번호 조회 API Call.
+        NetworkManager.getInstance().add(new NetworkRequestTest(mContext,mActionResultListener)).runNext();
+
     }
 
-    private void bindView(int n) {
+    private void bindView(TestModel data) {
         //0 = 비장애인, 1 = 장애인
-        if (n == 1) {
+        if (data.getResult().equals("1")) {
             // setAni..
             mImgAni.setImageResource(R.drawable.ani_check);
             AnimationDrawable ani = (AnimationDrawable) mImgAni.getDrawable();
@@ -79,4 +92,19 @@ public class CarResultActivity extends BaseActivity {
             mTxtComment.setText(" 주차 불가 차량입니다.\n3분 후 자동 신고됩니다.");
         }
     }
+
+    /**
+     * API Result CallBack Func.
+     */
+    private final ActionResultListener<TestModel> mActionResultListener = new ActionResultListener<TestModel>() {
+        @Override
+        public void onSuccess(TestModel data) {
+            bindView(data);
+        }
+
+        @Override
+        public void onFail(String error) {
+
+        }
+    };
 }

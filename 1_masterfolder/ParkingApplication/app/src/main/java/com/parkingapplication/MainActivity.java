@@ -23,9 +23,9 @@ import com.parkingapplication.utils.Logger;
 import com.parkingapplication.utils.MoveActivityUtil;
 import com.parkingapplication.view.Camera2;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener , Camera2.Camera2Interface, TextureView.SurfaceTextureListener {
-
-    // [s] 시크릿 페이지 관련 변수
+public class MainActivity extends BaseActivity implements View.OnClickListener, Camera2.Camera2Interface, TextureView.SurfaceTextureListener {
+    //
+    //    // [s] 시크릿 페이지 관련 변수
     private int mSecretClickCnt = 0;
     private long mSecretTime = -1;
     // [e] 시크릿 페이지 관련 변수
@@ -43,8 +43,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener ,
     @Override
     protected void onResume() {
         super.onResume();
-        if(mTextureView != null){
-            if(mTextureView.isAvailable()){
+        if (mTextureView != null) {
+            if (mTextureView.isAvailable()) {
                 openCamera();
             } else {
                 mTextureView.setSurfaceTextureListener(this);
@@ -106,30 +106,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener ,
         mTextureView = findViewById(R.id.v_texture);
         mTextureView.setSurfaceTextureListener(this);
 
-        mCamera = new Camera2(mContext,this);
+        mCamera = new Camera2(mContext, this);
 
-        // Test API Call.
-        NetworkManager.getInstance().add(new NetworkRequestTest(mContext, new ActionResultListener<TestModel>() {
-            @Override
-            public void onSuccess(TestModel data) {
-                Logger.d("onSuccess\t" + data.toString());
-            }
-
-            @Override
-            public void onFail(String error) {
-                Logger.d("onFail\t" + error);
-            }
-        })).runNext();
     }
 
-    private void openCamera(){
+    private void openCamera() {
         CameraManager cameraManager = mCamera.CameraManager_1(mActivity);
         String cameraId = mCamera.CameraCharacteristics_2(cameraManager);
-        mCamera.CameraDevice_3(cameraManager,cameraId);
+        mCamera.CameraDevice_3(cameraManager, cameraId);
     }
 
-    private void closeCamera(){
-        if(mCamera != null){
+    private void closeCamera() {
+        if (mCamera != null) {
             mCamera.closeCamera();
         }
     }
@@ -159,8 +147,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener ,
 
     /**
      * Camera2 Interface
+     *
      * @param cameraDevice CameraDevice.
-     * @param cameraSize    CameraSize
+     * @param cameraSize   CameraSize
      */
     @Override
     public void onCameraDeviceOpened(CameraDevice cameraDevice, Size cameraSize) {
