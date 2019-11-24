@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/container1"
     tools:context=".MainActivity">
 
-    <com.parkingapplication.view.CameraPreview
-        android:id="@+id/camera"
+    <TextureView
+        android:id="@+id/v_texture"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/cl_comment"
+        app:layout_constraintBottom_toTopOf="@+id/cl_comment"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="105dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_comment"
@@ -26,40 +25,55 @@
             android:id="@+id/img_logo"
             android:layout_width="@dimen/size_45"
             android:layout_height="@dimen/size_45"
+            android:layout_marginLeft="@dimen/size_5"
             android:src="@drawable/img_logo"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="@dimen/size_5"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txt_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_8"
+            android:fontFamily="@font/namsan_m"
             android:text="@string/str_main_comment"
             android:textSize="@dimen/size_12"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/img_logo"
-            android:layout_marginLeft="@dimen/size_8"
-
-            />
-
-        <TextView
-            android:id="@+id/tv_outPut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="출력 공간"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.907"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:clickable="true"
-            app:layout_constraintVertical_bias="0.512" />
-
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageResult"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/cl_comment"
+        app:layout_constraintEnd_toStartOf="@+id/v_texture"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="208dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/v_texture"
+        app:layout_constraintVertical_bias="0.887"
+        app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+
+    <Button
+        android:id="@+id/btnTakePicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:text="텍스트 인식"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
