@@ -295,8 +295,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             Log.e(TAG, "cameraDevice is null");
             return;
         }
-
-
         try {
             CameraCharacteristics characteristics = mCamera.CameraManager_1(this).getCameraCharacteristics(mCamera.mCameraDevice.getId());
             Logger.d("StopStop22");
@@ -306,21 +304,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
                 jpegSizes = map.getOutputSizes(ImageFormat.JPEG);
             }
-
-
             int width = 640;
             int height = 480;
-
-
             if (jpegSizes != null && 0 < jpegSizes.length) {
                 width = jpegSizes[0].getWidth();
                 height = jpegSizes[0].getHeight();
             }
-            Logger.d("StopStop44");
             ImageReader imageReader = ImageReader.newInstance(width, height, ImageFormat.JPEG, 1);
-            Logger.d("StopStop55");
             List<Surface> outputSurfaces = new ArrayList<Surface>(2);
-            Logger.d("StopStop66");
             outputSurfaces.add(imageReader.getSurface());
             outputSurfaces.add(new Surface(mTextureView.getSurfaceTexture()));
             final CaptureRequest.Builder captureBuilder = mCamera.mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
@@ -329,7 +320,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             // Orientation
             int rotation = getWindowManager().getDefaultDisplay().getRotation();
             captureBuilder.set(CaptureRequest.JPEG_ORIENTATION, ORIENTATIONS.get(rotation));
-            Logger.d("StopStop77");
             //final File file = new File(Environment.getExternalStorageDirectory()+"/pic.jpg");
             ImageReader.OnImageAvailableListener readerListener = new ImageReader.OnImageAvailableListener() {
                 @Override
@@ -350,14 +340,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
                         Bitmap imgRoi;
                         OpenCVLoader.initDebug(); // 초기화
-                        Logger.d("A");
+                        Log.d(TAG,"A");
                         Mat matBase = new Mat();
-                        Logger.d("B");
+
                         Utils.bitmapToMat(bitmap, matBase);
                         Mat matGray = new Mat();
                         Mat matCny = new Mat();
 
-                        Imgproc.cvtColor(matBase, matGray, Imgproc.COLOR_BGR2GRAY, 1); // GrayScale  //양진영 : 맨 뒤에 ,1 붙여봄
+                        Imgproc.cvtColor(matBase, matGray, Imgproc.COLOR_BGR2GRAY); // GrayScale  //양진영 : 맨 뒤에 ,1 붙여봄
                         Imgproc.Canny(matGray, matCny, 10, 100, 3, true); // Canny Edge 검출
                         Imgproc.threshold(matGray, matCny, 150, 255, Imgproc.THRESH_BINARY); //Binary
 
@@ -378,47 +368,48 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 //                                }
 //                            }
 //                        }
-                        Imgproc.drawContours(matBase, contours, -1, new Scalar(255, 0, 0, 255), 1); ///양진영: 값 조절해봄
+                        Imgproc.drawContours(matBase, contours, -1, new Scalar(255, 0, 0), 5); ///양진영: 값 조절해봄
 
                         imgBase = Bitmap.createBitmap(matBase.cols(), matBase.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성
 
                         Utils.matToBitmap(matBase, imgBase); // Mat을 비트맵으로 변환
 
-                        Logger.d("TEST:: RRRERERER");
+
 
                         //이미지 보낼 땐 runOnUiThread, 나머지는 AsyncTask
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 imageView.setImageBitmap(imgBase);
+                                Log.d(TAG,"B");
                             }
                         });
+
 //                        AsyncTask.execute(new Runnable() {
 //                            @Override
 //                            public void run() {
 //                                imageView.setImageBitmap(imgBase);
 //                            }
 //                        });
-
+                        Log.d(TAG,"C0");
                         imgRoi = Bitmap.createBitmap(matCny.cols(), matCny.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성
+                        Log.d(TAG,"C");
                         Utils.matToBitmap(matCny, imgRoi);
+                        Log.d(TAG,"C1");
+
 
                         for (int idx = 0; idx >= 0; idx = (int) hierarchy.get(0, idx)[0]) {
                             MatOfPoint matOfPoint = contours.get(idx);
                             Rect rect = Imgproc.boundingRect(matOfPoint);
-
+                            Log.d(TAG,"D");
                             ///양진영: 값 조절해봄
-                            if (rect.x < roi.getWidth() / 20 || rect.x > roi.getWidth() - (roi.getWidth() / 10) ||
-
-                                    rect.y < roi.getHeight() / 10 || rect.y > roi.getHeight() - (roi.getHeight() / 10) ||
-
-                                    rect.width < roi.getWidth() / 50 || rect.width > roi.getWidth() / 8 ||
-
-                                    rect.height <= roi.getHeight() / 10
-                            )
+                            if (rect.width < 30 || rect.height < 30 || rect.width <= rect.height || rect.width <= rect.height * 3 || rect.width >= rect.height * 6
+                            ) {
+                                Log.d(TAG,"E");
                                 continue; // 사각형 크기에 따라 출력 여부 결정
+                            }
 
-                            Log.d("RECT : ", "x : " + rect.x + ", y : " + rect.y + ", w :" + rect.width + ", h : " + rect.height);
+                            Log.d(TAG, "x : " + rect.x + ", y : " + rect.y + ", w :" + rect.width + ", h : " + rect.height);
 
                             roi = Bitmap.createBitmap(imgRoi, (int) rect.tl().x, (int) rect.tl().y, rect.width, rect.height);
                             new Thread(new Runnable() {
@@ -427,6 +418,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
+                                            Log.d(TAG,"F");
                                             imageResult.setImageBitmap(roi);
                                             new AsyncTess().execute(roi);
                                             btnTakePicture.setEnabled(false);

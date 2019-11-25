@@ -59,7 +59,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
     TessBaseAPI tessBaseAPI;
 
     private Button btnTakePicture;
@@ -69,12 +69,14 @@ public class MainActivity extends AppCompatActivity{
     private TextureView textureView;
 
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
+
     static {
         ORIENTATIONS.append(Surface.ROTATION_0, 90);
         ORIENTATIONS.append(Surface.ROTATION_90, 0);
         ORIENTATIONS.append(Surface.ROTATION_180, 270);
         ORIENTATIONS.append(Surface.ROTATION_270, 180);
     }
+
     private String cameraId;
     protected CameraDevice cameraDevice;
     protected CameraCaptureSession cameraCaptureSessions;
@@ -112,7 +114,7 @@ public class MainActivity extends AppCompatActivity{
 
         tessBaseAPI = new TessBaseAPI();
         String dir = getFilesDir() + "/tesseract";
-        if(checkLanguageFile(dir+"/tessdata"))
+        if (checkLanguageFile(dir + "/tessdata"))
             tessBaseAPI.init(dir, "kor");
     }
 
@@ -122,14 +124,17 @@ public class MainActivity extends AppCompatActivity{
             //open your camera here
             openCamera();
         }
+
         @Override
         public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
             // Transform you image captured size according to the surface width and height
         }
+
         @Override
         public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
             return false;
         }
+
         @Override
         public void onSurfaceTextureUpdated(SurfaceTexture surface) {
         }
@@ -143,10 +148,12 @@ public class MainActivity extends AppCompatActivity{
             cameraDevice = camera;
             createCameraPreview();
         }
+
         @Override
         public void onDisconnected(CameraDevice camera) {
             cameraDevice.close();
         }
+
         @Override
         public void onError(CameraDevice camera, int error) {
             cameraDevice.close();
@@ -159,6 +166,7 @@ public class MainActivity extends AppCompatActivity{
         mBackgroundThread.start();
         mBackgroundHandler = new Handler(mBackgroundThread.getLooper());
     }
+
     protected void stopBackgroundThread() {
         mBackgroundThread.quitSafely();
         try {
@@ -169,8 +177,9 @@ public class MainActivity extends AppCompatActivity{
             e.printStackTrace();
         }
     }
+
     protected void takePicture() {
-        if(null == cameraDevice) {
+        if (null == cameraDevice) {
             Log.e(TAG, "cameraDevice is null");
             return;
         }
@@ -219,12 +228,12 @@ public class MainActivity extends AppCompatActivity{
                         Bitmap imgRoi;
                         OpenCVLoader.initDebug(); // 초기화
 
-                        Mat matBase=new Mat();
-                        Utils.bitmapToMat(bitmap ,matBase);
+                        Mat matBase = new Mat();
+                        Utils.bitmapToMat(bitmap, matBase);
                         Mat matGray = new Mat();
                         Mat matCny = new Mat();
 
-                        Imgproc.cvtColor(matBase, matGray, Imgproc.COLOR_BGR2GRAY); // GrayScale
+                        Imgproc.cvtColor(matBase, matGray, Imgproc.COLOR_BGR2GRAY, 1); // GrayScale  //양진영 : 맨 뒤에 ,1 붙여봄
                         Imgproc.Canny(matGray, matCny, 10, 100, 3, true); // Canny Edge 검출
                         Imgproc.threshold(matGray, matCny, 150, 255, Imgproc.THRESH_BINARY); //Binary
 
@@ -235,46 +244,68 @@ public class MainActivity extends AppCompatActivity{
                         Imgproc.dilate(matCny, matCny, Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new org.opencv.core.Size(12, 12)));
                         //관심영역 추출
                         Imgproc.findContours(matCny, contours, hierarchy, Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE);//RETR_EXTERNAL //RETR_TREE
-                        Imgproc.drawContours(matBase, contours, -1, new Scalar(255, 0, 0), 5);
+                        ///양진영 : for문 추가해봄, 이진화된 이미지의 픽셀값을 모두 반전시킨다고 함
+//                        for (int x = 0; x < roi.getWidth(); x++) {
+//                            for (int y = 0; y < roi.getHeight(); y++) {
+//                                if (roi.getPixel(x, y) == -1) {
+//                                    roi.setPixel(x, y, 0);
+//                                } else {
+//                                    roi.setPixel(x, y, -1);
+//                                }
+//                            }
+//                        }
+                        Imgproc.drawContours(matBase, contours, -1, new Scalar(255, 0, 0, 255), 1); ///양진영: 값 조절해봄
 
-                        imgBase= Bitmap.createBitmap(matBase.cols(), matBase.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성
+                        imgBase = Bitmap.createBitmap(matBase.cols(), matBase.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성
                         Utils.matToBitmap(matBase, imgBase); // Mat을 비트맵으로 변환
-                        new Thread(new Runnable() {
+
+
+                        runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                runOnUiThread(new Runnable(){
-                                    @Override
-                                    public void run() {
-                                        imageView.setImageBitmap(imgBase);
-                                    }
-                                });
+                                imageView.setImageBitmap(imgBase);
+                                Log.d(TAG,"B");
                             }
-                        }).start();
-                        imgRoi= Bitmap.createBitmap(matCny.cols(), matCny.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성
+                        });
+
+
+                        imgRoi = Bitmap.createBitmap(matCny.cols(), matCny.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성
                         Utils.matToBitmap(matCny, imgRoi);
 
-                        for(int idx = 0; idx >= 0; idx = (int) hierarchy.get(0, idx)[0]) {
+                        for (int idx = 0; idx >= 0; idx = (int) hierarchy.get(0, idx)[0]) {
                             MatOfPoint matOfPoint = contours.get(idx);
+                            if (matOfPoint != null) {
+                                Log.d(TAG, "matOfPoint Error");
+                            }
                             Rect rect = Imgproc.boundingRect(matOfPoint);
-
-                            if (rect.width < 30 || rect.height < 30 || rect.width <= rect.height || rect.width <= rect.height * 3 || rect.width >= rect.height * 6)
+                            if (rect != null) {
+                                Log.d(TAG, "rect Error");
+                            }
+                            ///양진영: 값 조절해봄
+                            if (rect.width < 30 || rect.height < 30 || rect.width <= rect.height || rect.width <= rect.height * 3 || rect.width >= rect.height * 6
+                            ) {
+                                Log.d(TAG, "E");
                                 continue; // 사각형 크기에 따라 출력 여부 결정
+                            }
 
-                            roi = Bitmap.createBitmap( imgRoi, (int)rect.tl().x, (int)rect.tl().y, rect.width, rect.height);
-                            new Thread(new Runnable() {
+                            Log.d(TAG, "x : " + rect.x + ", y : " + rect.y + ", w :" + rect.width + ", h : " + rect.height);
+
+                            roi = Bitmap.createBitmap(imgRoi, (int) rect.tl().x, (int) rect.tl().y, rect.width, rect.height);
+
+                            if (roi != null) {
+                                Log.d(TAG, "roiError");
+                            }
+
+                            runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    runOnUiThread(new Runnable(){
-                                        @Override
-                                        public void run() {
-                                            imageResult.setImageBitmap(roi);
-                                            new AsyncTess().execute(roi);
-                                            btnTakePicture.setEnabled(false);
-                                            btnTakePicture.setText("텍스트 인식중...");
-                                        }
-                                    });
+                                    Log.d(TAG, "F");
+                                    imageResult.setImageBitmap(roi);
+                                    new AsyncTess().execute(roi);
+                                    btnTakePicture.setEnabled(false);
+                                    btnTakePicture.setText("텍스트 인식중...");
                                 }
-                            }).start();
+                            });
                             break;
                         }
                     } catch (Exception e) {
@@ -304,6 +335,7 @@ public class MainActivity extends AppCompatActivity{
                         e.printStackTrace();
                     }
                 }
+
                 @Override
                 public void onConfigureFailed(CameraCaptureSession session) {
                 }
@@ -312,6 +344,7 @@ public class MainActivity extends AppCompatActivity{
             e.printStackTrace();
         }
     }
+
     protected void createCameraPreview() {
         try {
             SurfaceTexture texture = textureView.getSurfaceTexture();
@@ -320,7 +353,7 @@ public class MainActivity extends AppCompatActivity{
             Surface surface = new Surface(texture);
             captureRequestBuilder = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
             captureRequestBuilder.addTarget(surface);
-            cameraDevice.createCaptureSession(Arrays.asList(surface), new CameraCaptureSession.StateCallback(){
+            cameraDevice.createCaptureSession(Arrays.asList(surface), new CameraCaptureSession.StateCallback() {
                 @Override
                 public void onConfigured(@NonNull CameraCaptureSession cameraCaptureSession) {
                     //The camera is already closed
@@ -331,6 +364,7 @@ public class MainActivity extends AppCompatActivity{
                     cameraCaptureSessions = cameraCaptureSession;
                     updatePreview();
                 }
+
                 @Override
                 public void onConfigureFailed(@NonNull CameraCaptureSession cameraCaptureSession) {
                     Toast.makeText(MainActivity.this, "Configuration change", Toast.LENGTH_SHORT).show();
@@ -340,6 +374,7 @@ public class MainActivity extends AppCompatActivity{
             e.printStackTrace();
         }
     }
+
     private void openCamera() {
         CameraManager manager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
         Log.e(TAG, "is camera open");
@@ -360,8 +395,9 @@ public class MainActivity extends AppCompatActivity{
         }
         Log.e(TAG, "openCamera X");
     }
+
     protected void updatePreview() {
-        if(null == cameraDevice) {
+        if (null == cameraDevice) {
             Log.e(TAG, "updatePreview error, return");
         }
         captureRequestBuilder.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
@@ -371,6 +407,7 @@ public class MainActivity extends AppCompatActivity{
             e.printStackTrace();
         }
     }
+
     private void closeCamera() {
         if (null != cameraDevice) {
             cameraDevice.close();
@@ -404,6 +441,7 @@ public class MainActivity extends AppCompatActivity{
             textureView.setSurfaceTextureListener(textureListener);
         }
     }
+
     @Override
     protected void onPause() {
         Log.e(TAG, "onPause");
@@ -412,22 +450,20 @@ public class MainActivity extends AppCompatActivity{
         super.onPause();
     }
 
-    boolean checkLanguageFile(String dir)
-    {
+    boolean checkLanguageFile(String dir) {
         File file = new File(dir);
-        if(!file.exists() && file.mkdirs())
+        if (!file.exists() && file.mkdirs())
             createFiles(dir);
-        else if(file.exists()){
+        else if (file.exists()) {
             String filePath = dir + "/kor.traineddata";
             File langDataFile = new File(filePath);
-            if(!langDataFile.exists())
+            if (!langDataFile.exists())
                 createFiles(dir);
         }
         return true;
     }
 
-    private void createFiles(String dir)
-    {
+    private void createFiles(String dir) {
         AssetManager assetMgr = this.getAssets();
 
         InputStream inputStream = null;
@@ -448,7 +484,7 @@ public class MainActivity extends AppCompatActivity{
             inputStream.close();
             outputStream.flush();
             outputStream.close();
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -481,11 +517,10 @@ public class MainActivity extends AppCompatActivity{
             String match = "[^\uAC00-\uD7A3xfe0-9a-zA-Z\\s]";
             result = result.replaceAll(match, " ");
             result = result.replaceAll(" ", "");
-            if(result.length() >= 7 && result.length() <= 8) {
+            if (result.length() >= 7 && result.length() <= 8) {
                 textView.setText(result);
                 Toast.makeText(MainActivity.this, "" + result, Toast.LENGTH_SHORT).show();
-            }
-            else {
+            } else {
                 textView.setText("");
                 Toast.makeText(MainActivity.this, "번호판 문자인식에 실패했습니다", Toast.LENGTH_LONG).show();
             }
