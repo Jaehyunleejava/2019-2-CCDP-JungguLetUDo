@@ -220,7 +220,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
             assert map != null;
             imageDimension = map.getOutputSizes(SurfaceTexture.class)[0];
-        } catch (CameraAccessException ex){
+        } catch (CameraAccessException ex) {
             Logger.d("Error\t" + ex.getMessage());
         }
 
@@ -290,36 +290,43 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     protected void takePicture() {
-        Logger.d("StopStop11");
+
         if (null == mCamera.mCameraDevice) {
             Log.e(TAG, "cameraDevice is null");
             return;
         }
+
         try {
             CameraCharacteristics characteristics = mCamera.CameraManager_1(this).getCameraCharacteristics(mCamera.mCameraDevice.getId());
-            Logger.d("StopStop22");
             Size[] jpegSizes = null;
             if (characteristics != null) {
-                Logger.d("StopStop33");
                 StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
                 jpegSizes = map.getOutputSizes(ImageFormat.JPEG);
             }
+
             int width = 640;
             int height = 480;
+
             if (jpegSizes != null && 0 < jpegSizes.length) {
                 width = jpegSizes[0].getWidth();
+                Log.e(TAG, width + "....");
                 height = jpegSizes[0].getHeight();
+                Log.e(TAG, height + "....");
             }
             ImageReader imageReader = ImageReader.newInstance(width, height, ImageFormat.JPEG, 1);
+
             List<Surface> outputSurfaces = new ArrayList<Surface>(2);
             outputSurfaces.add(imageReader.getSurface());
             outputSurfaces.add(new Surface(mTextureView.getSurfaceTexture()));
+
             final CaptureRequest.Builder captureBuilder = mCamera.mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
             captureBuilder.addTarget(imageReader.getSurface());
             captureBuilder.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
+
             // Orientation
             int rotation = getWindowManager().getDefaultDisplay().getRotation();
             captureBuilder.set(CaptureRequest.JPEG_ORIENTATION, ORIENTATIONS.get(rotation));
+
             //final File file = new File(Environment.getExternalStorageDirectory()+"/pic.jpg");
             ImageReader.OnImageAvailableListener readerListener = new ImageReader.OnImageAvailableListener() {
                 @Override
@@ -340,24 +347,28 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
                         Bitmap imgRoi;
                         OpenCVLoader.initDebug(); // 초기화
-                        Log.d(TAG,"A");
                         Mat matBase = new Mat();
 
                         Utils.bitmapToMat(bitmap, matBase);
                         Mat matGray = new Mat();
                         Mat matCny = new Mat();
 
-                        Imgproc.cvtColor(matBase, matGray, Imgproc.COLOR_BGR2GRAY); // GrayScale  //양진영 : 맨 뒤에 ,1 붙여봄
-                        Imgproc.Canny(matGray, matCny, 10, 100, 3, true); // Canny Edge 검출
-                        Imgproc.threshold(matGray, matCny, 150, 255, Imgproc.THRESH_BINARY); //Binary
+                        Imgproc.cvtColor(matBase, matGray, Imgproc.COLOR_BGR2GRAY, 0); // GrayScale  //양진영 : 맨 뒤에 ,1 붙여봄
+                        Imgproc.GaussianBlur(matGray, matGray, new org.opencv.core.Size(5, 5), 0); //양진영: 가우시안 블러
 
-                        List<MatOfPoint> contours = new ArrayList<>();
-                        Mat hierarchy = new Mat();
+                        Imgproc.Canny(matGray, matCny, 10, 100, 3, true); // Canny Edge 검출
+
+                        Imgproc.threshold(matGray, matCny, 150, 255, Imgproc.THRESH_BINARY); //Binary 검은색, 흰색으로 나눔, canny보다 먼저 수행되면 안됨, 경계선이 안생김
                         //노이즈제거
                         Imgproc.erode(matCny, matCny, Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new org.opencv.core.Size(6, 6)));
                         Imgproc.dilate(matCny, matCny, Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new org.opencv.core.Size(12, 12)));
+
+                        List<MatOfPoint> contours = new ArrayList<>(); ///컨투어 리스트 선언
+                        Mat hierarchy = new Mat();
                         //관심영역 추출
-                        Imgproc.findContours(matCny, contours, hierarchy, Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE);//RETR_EXTERNAL //RETR_TREE
+                        Imgproc.findContours(matCny, contours, hierarchy, Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE);//RETR_EXTERNAL //RETR_TREE //컨투어에 넣음, 윤곽선을 찾아준다.
+
+
                         ///양진영 : for문 추가해봄, 이진화된 이미지의 픽셀값을 모두 반전시킨다고 함
 //                        for (int x = 0; x < roi.getWidth(); x++) {
 //                            for (int y = 0; y < roi.getHeight(); y++) {
@@ -368,12 +379,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 //                                }
 //                            }
 //                        }
-                        Imgproc.drawContours(matBase, contours, -1, new Scalar(255, 0, 0), 5); ///양진영: 값 조절해봄
+                        Imgproc.drawContours(matGray, contours, -1, new Scalar(255, 0, 0), 5); ///양진영: 값 조절해봄 , 윤곽선을 그려준다.
 
-                        imgBase = Bitmap.createBitmap(matBase.cols(), matBase.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성
+                        imgBase = Bitmap.createBitmap(matCny.cols(), matCny.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성 양진영: 원래 matBase
 
-                        Utils.matToBitmap(matBase, imgBase); // Mat을 비트맵으로 변환
-
+                        Utils.matToBitmap(matCny, imgBase); // Mat을 비트맵으로 변환, 원래 matBase
 
 
                         //이미지 보낼 땐 runOnUiThread, 나머지는 AsyncTask
@@ -381,56 +391,52 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                             @Override
                             public void run() {
                                 imageView.setImageBitmap(imgBase);
-                                Log.d(TAG,"B");
                             }
                         });
 
-//                        AsyncTask.execute(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                imageView.setImageBitmap(imgBase);
-//                            }
-//                        });
-                        Log.d(TAG,"C0");
                         imgRoi = Bitmap.createBitmap(matCny.cols(), matCny.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성
-                        Log.d(TAG,"C");
                         Utils.matToBitmap(matCny, imgRoi);
-                        Log.d(TAG,"C1");
+                        Log.d(TAG, "O" + contours);
 
-
+                        // 컨투어에 넣음
                         for (int idx = 0; idx >= 0; idx = (int) hierarchy.get(0, idx)[0]) {
                             MatOfPoint matOfPoint = contours.get(idx);
                             Rect rect = Imgproc.boundingRect(matOfPoint);
-                            Log.d(TAG,"D");
+                            Log.d(TAG, "D");
                             ///양진영: 값 조절해봄
-                            if (rect.width < 30 || rect.height < 30 || rect.width <= rect.height || rect.width <= rect.height * 3 || rect.width >= rect.height * 6
-                            ) {
-                                Log.d(TAG,"E");
-                                continue; // 사각형 크기에 따라 출력 여부 결정
-                            }
 
                             Log.d(TAG, "x : " + rect.x + ", y : " + rect.y + ", w :" + rect.width + ", h : " + rect.height);
 
+                            if (rect.width < 30 || rect.height < 30 || rect.width <= rect.height || rect.width <= rect.height * 3 || rect.width >= rect.height * 6)
+                                continue; // 사각형 크기에 따라 출력 여부 결정
+
+
+                            Log.d(TAG, "Go");
+
                             roi = Bitmap.createBitmap(imgRoi, (int) rect.tl().x, (int) rect.tl().y, rect.width, rect.height);
-                            new Thread(new Runnable() {
+
+                            if (roi == null) {
+                                Log.d(TAG, "roi Error");
+                            }
+
+
+                            runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    runOnUiThread(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            Log.d(TAG,"F");
-                                            imageResult.setImageBitmap(roi);
-                                            new AsyncTess().execute(roi);
-                                            btnTakePicture.setEnabled(false);
-                                            btnTakePicture.setText("텍스트 인식중...");
-                                        }
-                                    });
+                                    imageResult.setImageBitmap(roi);
+                                    new AsyncTess().execute(roi);
+                                    btnTakePicture.setEnabled(false);
+                                    Toast.makeText(MainActivity.this, "이미지 촬영", Toast.LENGTH_LONG).show();
+                                    btnTakePicture.setText("텍스트 인식중...");
                                 }
-                            }).start();
+                            });
+
+
                             break;
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
+                        Log.d(TAG, "ECXEPTION");
                     } finally {
                         if (image != null) {
                             image.close();
@@ -571,6 +577,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         @Override
         protected String doInBackground(Bitmap... mRelativeParams) {
             tessBaseAPI.setImage(mRelativeParams[0]);
+            Log.e(TAG, "result tessBaseAPI" + tessBaseAPI.getUTF8Text());
             return tessBaseAPI.getUTF8Text();
         }
 

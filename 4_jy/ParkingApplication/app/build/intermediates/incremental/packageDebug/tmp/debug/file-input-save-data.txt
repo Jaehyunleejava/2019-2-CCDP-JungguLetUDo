@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Nov 24 19:58:35 KST 2019
+#Tue Nov 26 02:21:39 KST 2019
 17.baseType=DIRECTORY
 4.path=lib/armeabi-v7a/liblept.so
 25.base=C\:\\CapstoneDesign\\2019-2-CCDP-JungguLetUDo\\4_jy\\ParkingApplication\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
