@@ -1,0 +1,215 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+MERGED from [com.google.android.material:material:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\8a115bd561c5ce96b20ee96097a5996c\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\d236b79d061175174a622d923a7e721f\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\88a12e6c0e80d391592aeab60cc9f627\AndroidManifest.xml:2:1-11:12
+MERGED from [:opencv] C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\opencv\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [com.rmtheis:tess-two:9.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\81bd710d9f766ee5ab4447eb7fb5f4bc\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\68ea815536fb8ddb0cdb3b4c7b347744\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\a6e434260b2616f26a923ebb13efb879\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\7bc690ed97a0db939f18053b23a83345\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\1a0a5a169e875996e00f351064756462\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\0728e13863cf159e0bd5a356d246f439\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\4700b5fb5fa5475ee0f57d1a34ec8d1f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\4e8f75694001e996d2742d44aa00af0b\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\3e78d86ec3c11b2c9040de97e187bfb1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\43f5e5a4a2464dae5109dedd5ef46ab1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\b00a606451df2e2e30cbe481f46dc86b\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\50b8e9dd8f2d5e3d4150710a425ca62a\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\67052622625944777aed65ee8484d305\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\350b925b24a8f52d67e2ceff6b42b600\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\5dac17066a26fa35237c7accf21f51be\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\82ba36ff29f7c7da65e154b9dc9ec668\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\2471b94a2b93024e90d5825a6542a921\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\7b92c9a5a9a1eea0ab90510733ba9fd0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\502afc5d8560bf604c7b2d34296a6301\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\eff67398ff5a87473b14994c675299df\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\af5278aa6aa619ea5deeb87ffaa594d4\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\dca214e9de9db9c9430f43327c54bff7\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\ba152f9c7c7fdf0b5cf737ddc0cf44c3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\491688b65e3d23c6e0f71452cee32e01\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\687ec22e7e4450565c3ce84124bf046d\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\081cfc1a7eb7852d58d3dce897a3bdc7\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\6bb38f989217da0b2a997f06dfbfe17d\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\ed624c23ad152adda7165aaad5ed6c2b\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\7f1a80687f4ecce12597933917075e34\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\17d34b5e8883c0bb823a7b6abae14455\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\4d0d4974a93cb672d6409ea18e4ad86b\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\b44bcf7655694ab220d6dbe4e7269046\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+	package
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:3:5-37
+		INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+		INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+		INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:2:1-31:12
+		INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.CAMERA
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:5:5-65
+	android:name
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:5:22-62
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:6:22-78
+uses-permission#android.permission.INTERNET
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:7:5-67
+	android:name
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:7:22-64
+application
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:9:5-29:19
+MERGED from [com.google.android.material:material:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\8a115bd561c5ce96b20ee96097a5996c\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\8a115bd561c5ce96b20ee96097a5996c\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\88a12e6c0e80d391592aeab60cc9f627\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\88a12e6c0e80d391592aeab60cc9f627\AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\502afc5d8560bf604c7b2d34296a6301\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\502afc5d8560bf604c7b2d34296a6301\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\dca214e9de9db9c9430f43327c54bff7\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\dca214e9de9db9c9430f43327c54bff7\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\502afc5d8560bf604c7b2d34296a6301\AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:15:9-35
+	android:label
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:12:9-41
+	android:roundIcon
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:14:9-54
+	android:icon
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:11:9-43
+	android:allowBackup
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:16:9-40
+	android:networkSecurityConfig
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:13:9-69
+activity#com.parkingapplication.activity.CarResultActivity
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:17:9-73
+	android:name
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:17:19-61
+activity#com.parkingapplication.activity.IntroActivity
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:18:9-60
+	android:name
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:18:19-57
+activity#com.parkingapplication.MainActivity
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:19:9-26:20
+	android:theme
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:20:13-55
+	android:name
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:19:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:21:13-25:29
+action#android.intent.action.MAIN
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:22:17-69
+	android:name
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:22:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:24:17-77
+	android:name
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:24:27-74
+activity#com.parkingapplication.activity.PasswordActivity
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:27:9-63
+	android:name
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:27:19-60
+activity#com.parkingapplication.activity.AdministratorActivity
+ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:28:9-68
+	android:name
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml:28:19-65
+uses-sdk
+INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\8a115bd561c5ce96b20ee96097a5996c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\8a115bd561c5ce96b20ee96097a5996c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\d236b79d061175174a622d923a7e721f\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\d236b79d061175174a622d923a7e721f\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\88a12e6c0e80d391592aeab60cc9f627\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\88a12e6c0e80d391592aeab60cc9f627\AndroidManifest.xml:5:5-7:41
+MERGED from [:opencv] C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\opencv\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:opencv] C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\opencv\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.rmtheis:tess-two:9.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\81bd710d9f766ee5ab4447eb7fb5f4bc\AndroidManifest.xml:22:5-24:41
+MERGED from [com.rmtheis:tess-two:9.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\81bd710d9f766ee5ab4447eb7fb5f4bc\AndroidManifest.xml:22:5-24:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\68ea815536fb8ddb0cdb3b4c7b347744\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\68ea815536fb8ddb0cdb3b4c7b347744\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\a6e434260b2616f26a923ebb13efb879\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\a6e434260b2616f26a923ebb13efb879\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\7bc690ed97a0db939f18053b23a83345\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\7bc690ed97a0db939f18053b23a83345\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\1a0a5a169e875996e00f351064756462\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\1a0a5a169e875996e00f351064756462\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\0728e13863cf159e0bd5a356d246f439\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\0728e13863cf159e0bd5a356d246f439\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\4700b5fb5fa5475ee0f57d1a34ec8d1f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\4700b5fb5fa5475ee0f57d1a34ec8d1f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\4e8f75694001e996d2742d44aa00af0b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\4e8f75694001e996d2742d44aa00af0b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\3e78d86ec3c11b2c9040de97e187bfb1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\3e78d86ec3c11b2c9040de97e187bfb1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\43f5e5a4a2464dae5109dedd5ef46ab1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\43f5e5a4a2464dae5109dedd5ef46ab1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\b00a606451df2e2e30cbe481f46dc86b\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\b00a606451df2e2e30cbe481f46dc86b\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\50b8e9dd8f2d5e3d4150710a425ca62a\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\50b8e9dd8f2d5e3d4150710a425ca62a\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\67052622625944777aed65ee8484d305\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\67052622625944777aed65ee8484d305\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\350b925b24a8f52d67e2ceff6b42b600\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\350b925b24a8f52d67e2ceff6b42b600\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\5dac17066a26fa35237c7accf21f51be\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\5dac17066a26fa35237c7accf21f51be\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\82ba36ff29f7c7da65e154b9dc9ec668\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\82ba36ff29f7c7da65e154b9dc9ec668\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\2471b94a2b93024e90d5825a6542a921\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\2471b94a2b93024e90d5825a6542a921\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\7b92c9a5a9a1eea0ab90510733ba9fd0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\7b92c9a5a9a1eea0ab90510733ba9fd0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\502afc5d8560bf604c7b2d34296a6301\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\502afc5d8560bf604c7b2d34296a6301\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\eff67398ff5a87473b14994c675299df\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\eff67398ff5a87473b14994c675299df\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\af5278aa6aa619ea5deeb87ffaa594d4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\af5278aa6aa619ea5deeb87ffaa594d4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\dca214e9de9db9c9430f43327c54bff7\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\dca214e9de9db9c9430f43327c54bff7\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\ba152f9c7c7fdf0b5cf737ddc0cf44c3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\ba152f9c7c7fdf0b5cf737ddc0cf44c3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\491688b65e3d23c6e0f71452cee32e01\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\491688b65e3d23c6e0f71452cee32e01\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\687ec22e7e4450565c3ce84124bf046d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\687ec22e7e4450565c3ce84124bf046d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\081cfc1a7eb7852d58d3dce897a3bdc7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\081cfc1a7eb7852d58d3dce897a3bdc7\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\6bb38f989217da0b2a997f06dfbfe17d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\6bb38f989217da0b2a997f06dfbfe17d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\ed624c23ad152adda7165aaad5ed6c2b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\ed624c23ad152adda7165aaad5ed6c2b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\7f1a80687f4ecce12597933917075e34\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\7f1a80687f4ecce12597933917075e34\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\17d34b5e8883c0bb823a7b6abae14455\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\17d34b5e8883c0bb823a7b6abae14455\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\4d0d4974a93cb672d6409ea18e4ad86b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\4d0d4974a93cb672d6409ea18e4ad86b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\b44bcf7655694ab220d6dbe4e7269046\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Gradle\gradle-5.4.1\caches\transforms-2\files-2.1\b44bcf7655694ab220d6dbe4e7269046\AndroidManifest.xml:20:5-44
+INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+		INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+		ADDED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
+		INJECTED from C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\ParkingApplication\app\src\main\AndroidManifest.xml
