@@ -11,6 +11,8 @@ import com.parkingapplication.networks.listener.APIService;
 import com.parkingapplication.networks.listener.ActionResultListener;
 import com.parkingapplication.utils.Logger;
 
+import java.net.URLEncoder;
+
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -70,8 +72,9 @@ public class NetworkRequestTest extends BaseNetwork<TestModel> {
     @Override
     public void run() {
 
+        //requestTest안에 차량 번호판 입력!!
         ClientUtil.getInstance().getRetrofit()
                 .create(APIService.class)
-                .requestIndex().enqueue(mCallBack);
+                .requestTest("15가124").enqueue(mCallBack);
     }
 }
