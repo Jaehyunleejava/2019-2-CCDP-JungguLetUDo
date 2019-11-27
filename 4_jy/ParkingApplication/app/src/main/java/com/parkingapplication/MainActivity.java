@@ -157,6 +157,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 }
                 break;
 
+            //양진영 opencv
             case R.id.btnTakePicture:
                 takePicture();
                 break;
@@ -354,36 +355,28 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         Mat matCny = new Mat();
 
                         Imgproc.cvtColor(matBase, matGray, Imgproc.COLOR_BGR2GRAY, 0); // GrayScale  //양진영 : 맨 뒤에 ,1 붙여봄
+                        Log.e(TAG,"gray1");
+
                         Imgproc.GaussianBlur(matGray, matGray, new org.opencv.core.Size(5, 5), 0); //양진영: 가우시안 블러
-
-                        Imgproc.Canny(matGray, matCny, 10, 100, 3, true); // Canny Edge 검출
-
-                        Imgproc.threshold(matGray, matCny, 150, 255, Imgproc.THRESH_BINARY); //Binary 검은색, 흰색으로 나눔, canny보다 먼저 수행되면 안됨, 경계선이 안생김
                         //노이즈제거
-                        Imgproc.erode(matCny, matCny, Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new org.opencv.core.Size(6, 6)));
-                        Imgproc.dilate(matCny, matCny, Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new org.opencv.core.Size(12, 12)));
+                        Imgproc.erode(matGray, matGray, Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new org.opencv.core.Size(6, 6)));
+                        Imgproc.dilate(matGray, matGray, Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new org.opencv.core.Size(12, 12)));
+
+                        Imgproc.Canny(matGray, matCny, 10, 100, 3, true); // Canny Edge 검출 //진영: Gray
+                        Imgproc.threshold(matGray, matCny, 150, 255, Imgproc.THRESH_BINARY); //Binary 검은색, 흰색으로 나눔, canny보다 먼저 수행되면 안됨, 경계선이 안생김
+
 
                         List<MatOfPoint> contours = new ArrayList<>(); ///컨투어 리스트 선언
                         Mat hierarchy = new Mat();
                         //관심영역 추출
                         Imgproc.findContours(matCny, contours, hierarchy, Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE);//RETR_EXTERNAL //RETR_TREE //컨투어에 넣음, 윤곽선을 찾아준다.
+                        //양진영 : Gray, external, chain - simple
 
+                        Imgproc.drawContours(matBase, contours, -1, new Scalar(255, 0, 0), 5); ///양진영: 값 조절해봄 , 윤곽선을 그려준다.
 
-                        ///양진영 : for문 추가해봄, 이진화된 이미지의 픽셀값을 모두 반전시킨다고 함
-//                        for (int x = 0; x < roi.getWidth(); x++) {
-//                            for (int y = 0; y < roi.getHeight(); y++) {
-//                                if (roi.getPixel(x, y) == -1) {
-//                                    roi.setPixel(x, y, 0);
-//                                } else {
-//                                    roi.setPixel(x, y, -1);
-//                                }
-//                            }
-//                        }
-                        Imgproc.drawContours(matGray, contours, -1, new Scalar(255, 0, 0), 5); ///양진영: 값 조절해봄 , 윤곽선을 그려준다.
+                        imgBase = Bitmap.createBitmap(matBase.cols(), matBase.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성 양진영: 원래 matBase
 
-                        imgBase = Bitmap.createBitmap(matCny.cols(), matCny.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성 양진영: 원래 matBase
-
-                        Utils.matToBitmap(matCny, imgBase); // Mat을 비트맵으로 변환, 원래 matBase
+                        Utils.matToBitmap(matBase, imgBase); // Mat을 비트맵으로 변환, 원래 matBase
 
 
                         //이미지 보낼 땐 runOnUiThread, 나머지는 AsyncTask
@@ -394,9 +387,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                             }
                         });
 
-                        imgRoi = Bitmap.createBitmap(matCny.cols(), matCny.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성
-                        Utils.matToBitmap(matCny, imgRoi);
-                        Log.d(TAG, "O" + contours);
+                        imgRoi = Bitmap.createBitmap(matGray.cols(), matGray.rows(), Bitmap.Config.ARGB_8888); // 비트맵 생성
+                        Utils.matToBitmap(matGray, imgRoi);
 
                         // 컨투어에 넣음
                         for (int idx = 0; idx >= 0; idx = (int) hierarchy.get(0, idx)[0]) {
@@ -405,16 +397,26 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                             Log.d(TAG, "D");
                             ///양진영: 값 조절해봄
 
-                            Log.d(TAG, "x : " + rect.x + ", y : " + rect.y + ", w :" + rect.width + ", h : " + rect.height);
+                            Log.d(TAG, "size " + "x : " + rect.x + ", y : " + rect.y + ", w :" + rect.width + ", h : " + rect.height);
 
-                            if (rect.width < 30 || rect.height < 30 || rect.width <= rect.height || rect.width <= rect.height * 3 || rect.width >= rect.height * 6)
+                            if (700 >= rect.width || rect.width >= 1600 || 150 >= rect.height || rect.height >= 450 || rect.width <= rect.height || rect.width <= rect.height * 3.5 || rect.width >= rect.height * 5.5)
                                 continue; // 사각형 크기에 따라 출력 여부 결정
 
 
                             Log.d(TAG, "Go");
-
                             roi = Bitmap.createBitmap(imgRoi, (int) rect.tl().x, (int) rect.tl().y, rect.width, rect.height);
+                            Log.d(TAG, "size " + "x : " + rect.x + ", y : " + rect.y + ", w :" + rect.width + ", h : " + rect.height);
 
+                            ///양진영 : for문 추가해봄, 이진화된 이미지의 픽셀값을 모두 반전시킨다고 함
+//                            for (int x = 0; x < roi.getWidth(); x++) {
+//                                for (int y = 0; y < roi.getHeight(); y++) {
+//                                    if (roi.getPixel(x, y) == -1) {
+//                                        roi.setPixel(x, y, 0);
+//                                    } else {
+//                                        roi.setPixel(x, y, -1);
+//                                    }
+//                                }
+//                            }
                             if (roi == null) {
                                 Log.d(TAG, "roi Error");
                             }

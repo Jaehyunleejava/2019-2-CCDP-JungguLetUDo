@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">장애인 주차구역 지킴이</string>
+    <string name="app_name">장키미</string>
     <string name="str_main_comment">장애인 주차구역 지킴이는 무인으로 운영되는\n24시간 장애인주차구역 관리시스템입니다.</string>
     <string name="txt_password_name">암 호 입 력</string>
     <string name="txt_password">*</string>
