@@ -54,7 +54,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
     // [e] Retrofit 관련
 
-    implementation 'org.tensorflow.demo:yolo@aar'
+    implementation 'org.tensorflow.demo:yolo_v1.0.0@aar'
+    implementation 'org.tensorflow:tensorflow-android:+'
 
     implementation project(':OpenCV')
 }
