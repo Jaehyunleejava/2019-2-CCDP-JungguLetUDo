@@ -93,6 +93,7 @@
     <dimen name="size_240">240dp</dimen>
     <dimen name="size_250">250dp</dimen>
     <dimen name="size_350">350dp</dimen>
+    <dimen name="size_400">400dp</dimen>
 
 
 </resources>

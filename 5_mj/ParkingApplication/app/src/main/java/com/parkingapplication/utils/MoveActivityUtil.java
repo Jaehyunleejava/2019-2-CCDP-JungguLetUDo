@@ -8,6 +8,7 @@ import com.parkingapplication.activity.AdministratorActivity;
 import com.parkingapplication.activity.CarResultActivity;
 import com.parkingapplication.activity.IntroActivity;
 import com.parkingapplication.activity.PasswordActivity;
+import com.parkingapplication.activity.YoloActivity;
 
 /**
  * mj_application_v1
@@ -54,6 +55,12 @@ public class MoveActivityUtil {
 
     public synchronized void moveCarResultActivity(final Activity activity){
         Intent intent = new Intent(activity, CarResultActivity.class);
+        activity.startActivity(intent);
+        activity.overridePendingTransition(R.anim.anim_fade_in, R.anim.anim_fade_out);
+    }
+
+    public synchronized void moveYoloAct(final Activity activity){
+        Intent intent = new Intent(activity, YoloActivity.class);
         activity.startActivity(intent);
         activity.overridePendingTransition(R.anim.anim_fade_in, R.anim.anim_fade_out);
     }
