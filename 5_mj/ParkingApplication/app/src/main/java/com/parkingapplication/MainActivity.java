@@ -40,6 +40,7 @@ public class MainActivity extends DetectorActivity implements YoloListener {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case MoveActivityUtil.REQUEST_INTRO:
+
                 setInit();
                 break;
         }
@@ -47,7 +48,7 @@ public class MainActivity extends DetectorActivity implements YoloListener {
 
     private void setInit() {
 //        setContentView(R.layout.activity_main);
-        Logger.d("TEST:: ¿©±â±îÁö¿È??");
+        Logger.d("TEST:: ì—¬ê¸°ê¹Œì§€ì˜´??");
         setYoloListener(this);
         LayoutInflater inflater = getLayoutInflater();
         View view = inflater.inflate(R.layout.layout_main, null);
