@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">장키미</string>
+    <string name="str_main_comment">장애인 주차구역 지킴이는 무인으로 운영되는\n24시간 장애인주차구역 관리시스템입니다.</string>
+    <string name="txt_password_name">암 호 입 력</string>
+    <string name="txt_password">*</string>
+    <string name="txt_password_detail">관리자용 암호를 입력해주세요.</string>
+    <string name="txt_password_part">"패스워드 누르면 나오는부분"</string>
+    <string name="txt_password_one">1</string>
+    <string name="txt_password_two">2</string>
+    <string name="txt_password_three">3</string>
+    <string name="txt_password_four">4</string>
+    <string name="txt_password_five">5</string>
+    <string name="txt_password_six">6</string>
+    <string name="txt_password_seven">7</string>
+    <string name="txt_password_eight">8</string>
+    <string name="txt_password_nine">9</string>
+    <string name="txt_password_zero">0</string>
+    <string name="txt_password_remove">X</string>
+    <string name="txt_car_name">차량 번호</string>
+</resources>

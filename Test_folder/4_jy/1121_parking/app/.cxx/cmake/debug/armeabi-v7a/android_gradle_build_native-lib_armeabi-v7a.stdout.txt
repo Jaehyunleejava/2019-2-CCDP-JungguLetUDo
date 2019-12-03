@@ -1,0 +1,2 @@
+ninja: Entering directory `C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\1121_parking\app\.cxx\cmake\debug\armeabi-v7a'
+ninja: no work to do.

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item
+        android:drawable="@drawable/check_01"
+        android:duration="71" />
+
+    <item
+        android:drawable="@drawable/check_02"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_03"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_04"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_05"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_06"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_07"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_08"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_09"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_10"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_11"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_12"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_13"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_14"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_15"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_16"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_17"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_18"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_19"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_20"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_21"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_22"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_23"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_24"
+        android:duration="71" />
+
+    <item
+        android:drawable="@drawable/check_25"
+        android:duration="71" />
+
+    <item
+        android:drawable="@drawable/check_26"
+        android:duration="71" />
+
+    <item
+        android:drawable="@drawable/check_27"
+        android:duration="71" />
+
+    <item
+        android:drawable="@drawable/check_28"
+        android:duration="71" />
+
+    <item
+        android:drawable="@drawable/check_29"
+        android:duration="71" />
+
+    <item
+        android:drawable="@drawable/check_30"
+        android:duration="71" />
+
+    <item
+        android:drawable="@drawable/check_31"
+        android:duration="71" />
+    <item
+        android:drawable="@drawable/check_32"
+        android:duration="71" />
+
+</animation-list>

@@ -1,0 +1,2 @@
+include ':app', ':opencv'
+rootProject.name='1121_parking'

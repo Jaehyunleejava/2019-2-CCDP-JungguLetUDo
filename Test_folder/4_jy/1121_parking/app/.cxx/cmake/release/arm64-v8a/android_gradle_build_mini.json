@@ -1,0 +1,19 @@
+{
+  "buildFiles": [
+    "C:\\Users\\yozom\\AppData\\Local\\Android\\Sdk\\ndk\\20.1.5948944\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\yozom\\AppData\\Local\\Android\\Sdk\\ndk\\20.1.5948944\\build\\cmake\\platforms.cmake",
+    "C:\\CapstoneDesign\\2019-2-CCDP-JungguLetUDo\\4_jy\\1121_parking\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\yozom\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\CapstoneDesign\\2019-2-CCDP-JungguLetUDo\\4_jy\\1121_parking\\app\\.cxx\\cmake\\release\\arm64-v8a\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\yozom\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\CapstoneDesign\\2019-2-CCDP-JungguLetUDo\\4_jy\\1121_parking\\app\\.cxx\\cmake\\release\\arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-lib-Release-arm64-v8a": {
+      "artifactName": "native-lib",
+      "buildCommand": "C:\\Users\\yozom\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\CapstoneDesign\\2019-2-CCDP-JungguLetUDo\\4_jy\\1121_parking\\app\\.cxx\\cmake\\release\\arm64-v8a\" native-lib",
+      "abi": "arm64-v8a",
+      "output": "C:\\CapstoneDesign\\2019-2-CCDP-JungguLetUDo\\4_jy\\1121_parking\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libnative-lib.so"
+    }
+  }
+}

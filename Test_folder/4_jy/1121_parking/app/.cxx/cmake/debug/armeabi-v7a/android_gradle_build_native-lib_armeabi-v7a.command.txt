@@ -1,0 +1,7 @@
+Executable : C:\Users\yozom\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\1121_parking\app\.cxx\cmake\debug\armeabi-v7a
+native-lib
+jvmArgs : 
+
