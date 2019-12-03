@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "D:\\dev\\2019-2-CCDP-JungguLetUDo\\5_mj\\ParkingApplication\\opencv\\libcxx_helper\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\Jeongtai\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\dev\\2019-2-CCDP-JungguLetUDo\\5_mj\\ParkingApplication\\opencv\\.externalNativeBuild\\cmake\\release\\x86 --target clean"
+  ],
+  "libraries": {
+    "opencv_jni_shared-Release-x86": {
+      "artifactName": "opencv_jni_shared",
+      "buildCommand": "C:\\Users\\Jeongtai\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\dev\\2019-2-CCDP-JungguLetUDo\\5_mj\\ParkingApplication\\opencv\\.externalNativeBuild\\cmake\\release\\x86 --target opencv_jni_shared",
+      "abi": "x86",
+      "output": "D:\\dev\\2019-2-CCDP-JungguLetUDo\\5_mj\\ParkingApplication\\opencv\\.externalNativeBuild\\cmake\\release\\x86\\libopencv_jni_shared.a"
+    }
+  }
+}
