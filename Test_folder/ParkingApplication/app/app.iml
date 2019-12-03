@@ -149,7 +149,7 @@
     <orderEntry type="library" name="Gradle: androidx.multidex:multidex:2.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: org.tensorflow:tensorflow-android:1.13.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.rmtheis:tess-two:9.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: org.tensorflow.demo:yolo_v1.0.0:@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.tensorflow.demo:yolo_v1.0.2:@aar" level="project" />
     <orderEntry type="module" module-name="OpenCV" />
   </component>
 </module>

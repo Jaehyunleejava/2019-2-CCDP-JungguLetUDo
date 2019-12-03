@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.tensorflow.demo:yolo_v1.0.2:@aar">
+    <CLASSES>
+      <root url="jar://C:/Gradle/gradle-5.4.1/caches/transforms-2/files-2.1/dcca6ee6129108201843829be08f2c8b/jars/classes.jar!/" />
+      <root url="file://C:/Gradle/gradle-5.4.1/caches/transforms-2/files-2.1/dcca6ee6129108201843829be08f2c8b/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

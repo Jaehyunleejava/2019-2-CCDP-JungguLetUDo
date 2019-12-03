@@ -1,4 +1,4 @@
-# Install script for directory: D:/dev/2019-2-CCDP-JungguLetUDo/5_mj/ParkingApplication/opencv/libcxx_helper
+# Install script for directory: C:/CapstoneDesign/2019-2-CCDP-JungguLetUDo/Test_folder/ParkingApplication/opencv/libcxx_helper
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/dev/2019-2-CCDP-JungguLetUDo/5_mj/ParkingApplication/opencv/.externalNativeBuild/cmake/debug/x86_64/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/CapstoneDesign/2019-2-CCDP-JungguLetUDo/Test_folder/ParkingApplication/opencv/.externalNativeBuild/cmake/debug/x86_64/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

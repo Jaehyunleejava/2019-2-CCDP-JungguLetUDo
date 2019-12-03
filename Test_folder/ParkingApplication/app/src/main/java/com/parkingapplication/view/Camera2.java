@@ -18,9 +18,9 @@ import android.os.Build;
 import android.util.Size;
 import android.view.Surface;
 
-import androidx.annotation.NonNull;
-
 import java.util.Collections;
+
+import androidx.annotation.NonNull;
 
 /**
  * mj_parking_app
@@ -37,9 +37,9 @@ public class Camera2 {
     private Camera2Interface mInterface;
     private Size mCameraSize;
 
-    private CameraCaptureSession mCaptureSession;
-    private CameraDevice mCameraDevice;
-    private CaptureRequest.Builder mPreviewRequestBuilder;
+    public CameraCaptureSession mCaptureSession;
+    public CameraDevice mCameraDevice;
+    public CaptureRequest.Builder mPreviewRequestBuilder;
     private Context mContext;
 
     public Camera2(Context ctx, Camera2Interface impl) {
