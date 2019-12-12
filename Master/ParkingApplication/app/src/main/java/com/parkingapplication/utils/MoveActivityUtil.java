@@ -53,8 +53,9 @@ public class MoveActivityUtil {
         activity.overridePendingTransition(R.anim.anim_fade_in, R.anim.anim_fade_out);
     }
 
-    public synchronized void moveCarResultActivity(final Activity activity){
+    public synchronized void moveCarResultActivity(final Activity activity,String jsonObject){
         Intent intent = new Intent(activity, CarResultActivity.class);
+        intent.putExtra(CarResultActivity.BUNDLE_DATA_JSON, jsonObject);
         activity.startActivity(intent);
         activity.overridePendingTransition(R.anim.anim_fade_in, R.anim.anim_fade_out);
     }

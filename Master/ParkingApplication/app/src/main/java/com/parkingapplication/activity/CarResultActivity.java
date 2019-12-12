@@ -1,5 +1,6 @@
 package com.parkingapplication.activity;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -7,18 +8,17 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.parkingapplication.R;
-import com.parkingapplication.networks.controller.NetworkManager;
 import com.parkingapplication.networks.dataModel.TestModel;
 import com.parkingapplication.networks.listener.ActionResultListener;
-import com.parkingapplication.networks.network.NetworkRequestTest;
-import com.parkingapplication.utils.Logger;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Random;
 
 public class CarResultActivity extends BaseActivity {
+
+    public static final String BUNDLE_DATA_JSON = "a";
 
     ImageView mImgAni;
     TextView mTxtComment;
@@ -43,13 +43,28 @@ public class CarResultActivity extends BaseActivity {
         setContentView(R.layout.activity_carresult);
 
         initView();
+        setData(getIntent());
+    }
+
+    /**
+     * Intent 에서 가져온 JsonObject 를 데이터 모델화 하는 함수.
+     * @param intent getIntent
+     * @author mj Park.
+     */
+    private void setData(Intent intent) {
+        if (intent.hasExtra(BUNDLE_DATA_JSON)) {
+            String jsonObject = intent.getStringExtra(BUNDLE_DATA_JSON);
+            Gson gson = new Gson();
+            TestModel model = gson.fromJson(jsonObject, TestModel.class);
+            bindView(model);
+        }
     }
 
     @Override
     public void finish() {
         super.finish();
         // 페이지가 넘어 갈때 소리 중지.
-        if(sound != null){
+        if (sound != null) {
             sound.stop(streamId);
         }
     }
@@ -63,12 +78,13 @@ public class CarResultActivity extends BaseActivity {
 
         mSoundId = sound.load(this, R.raw.siren, 1);
 
-        // 차량번호 조회 API Call.
-        NetworkManager.getInstance().add(new NetworkRequestTest(mContext,mActionResultListener)).runNext();
+//        // 차량번호 조회 API Call.
+//        NetworkManager.getInstance().add(new NetworkRequestTest(mContext,mActionResultListener)).runNext();
 
     }
 
     private void bindView(TestModel data) {
+        YoloActivity.isCaptured = false;
         //0 = 비장애인, 1 = 장애인
         if (data.getResult().equals("1")) {
             // setAni..

@@ -32,7 +32,7 @@ public class AdministratorActivity extends BaseActivity implements View.OnClickL
         switch (view.getId()) {
             //TODO MainActivity에서 Car Detect(YOLO)시 CarResultActivity 전환
             case R.id.img_logo:
-                MoveActivityUtil.getInstance().moveCarResultActivity(mActivity);
+//                MoveActivityUtil.getInstance().moveCarResultActivity(mActivity);
                 break;
         }
     }
