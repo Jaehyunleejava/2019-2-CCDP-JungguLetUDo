@@ -1,3 +1,0 @@
-C:/CapstoneDesign/2019-2-CCDP-JungguLetUDo/4_jy/1121_parking/app/.cxx/cmake/debug/x86/CMakeFiles/native-lib.dir
-C:/CapstoneDesign/2019-2-CCDP-JungguLetUDo/4_jy/1121_parking/app/.cxx/cmake/debug/x86/CMakeFiles/edit_cache.dir
-C:/CapstoneDesign/2019-2-CCDP-JungguLetUDo/4_jy/1121_parking/app/.cxx/cmake/debug/x86/CMakeFiles/rebuild_cache.dir

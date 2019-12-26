@@ -1,3 +1,0 @@
-C:/CapstoneDesign/2019-2-CCDP-JungguLetUDo/4_jy/ParkingApplication/opencv/.cxx/cmake/debug/arm64-v8a/CMakeFiles/opencv_jni_shared.dir
-C:/CapstoneDesign/2019-2-CCDP-JungguLetUDo/4_jy/ParkingApplication/opencv/.cxx/cmake/debug/arm64-v8a/CMakeFiles/edit_cache.dir
-C:/CapstoneDesign/2019-2-CCDP-JungguLetUDo/4_jy/ParkingApplication/opencv/.cxx/cmake/debug/arm64-v8a/CMakeFiles/rebuild_cache.dir

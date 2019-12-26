@@ -1,2 +1,0 @@
-ninja: Entering directory `C:\CapstoneDesign\2019-2-CCDP-JungguLetUDo\4_jy\1121_parking\app\.cxx\cmake\debug\x86'
-ninja: no work to do.

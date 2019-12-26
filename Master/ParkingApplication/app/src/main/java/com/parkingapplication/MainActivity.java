@@ -23,10 +23,13 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.googlecode.tesseract.android.TessBaseAPI;
+import com.parkingapplication.networks.controller.NetworkManager;
+import com.parkingapplication.networks.network.NetworkRequestTest;
 import com.parkingapplication.utils.Logger;
 import com.parkingapplication.utils.MoveActivityUtil;
 
 import org.tensorflow.demo.CameraActivity;
+import org.tensorflow.demo.CameraConnectionFragment;
 import org.tensorflow.demo.Classifier;
 import org.tensorflow.demo.DetectorActivity;
 import org.tensorflow.demo.YoloListener;
@@ -167,6 +170,8 @@ public class MainActivity extends DetectorActivity implements YoloListener {
 
 
     }
+
+
 
 
 
