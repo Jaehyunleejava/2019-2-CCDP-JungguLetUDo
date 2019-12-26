@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/opencv/OpenCV.iml" filepath="$PROJECT_DIR$/opencv/OpenCV.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ParkingApplication.iml" filepath="$PROJECT_DIR$/ParkingApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ParkingApp_hm.iml" filepath="$PROJECT_DIR$/ParkingApp_hm.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

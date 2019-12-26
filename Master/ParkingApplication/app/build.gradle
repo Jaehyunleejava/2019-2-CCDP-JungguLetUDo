@@ -10,25 +10,18 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        externalNativeBuild {
-            cmake {
-                cppFlags ""
-            }
-        }
 
         ndk {
             abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
         }
     }
-    //나중에 안되면 CmakeList때문
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    sourceSets { main { jni.srcDirs = ['src/main/jni', 'src/main/jniLibs/'] } }
 
     dexOptions {
         maxProcessCount 4 // this is the default value
@@ -61,9 +54,6 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
     // [e] Retrofit 관련
 
-    implementation 'org.tensorflow.demo:yolo_v1.0.0@aar'
+    implementation 'org.tensorflow.demo:yolo_v1.0.4@aar'
     implementation 'org.tensorflow:tensorflow-android:+'
-
-    implementation project(':OpenCV')
-    implementation 'com.rmtheis:tess-two:9.0.0'
 }

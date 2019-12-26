@@ -15,6 +15,10 @@ public class TestModel implements Serializable {
 
     String result;
 
+    public TestModel(){
+
+    }
+
     /**
      * getter Func.
      * 차량번호 조회 값

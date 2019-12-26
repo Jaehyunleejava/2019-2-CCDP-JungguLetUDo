@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: org.tensorflow.demo:yolo_v1.0.3:@aar">
+    <CLASSES>
+<<<<<<< HEAD:Master/ParkingApplication/.idea/libraries/Gradle__org_tensorflow_demo_yolo_v1_0_0__aar.xml
+      <root url="jar://C:/AndroidStudioProjects/gradle-5.4.1-all/caches/transforms-2/files-2.1/16db5cec40ea9937ee11ea961a6ae475/jars/classes.jar!/" />
+      <root url="file://C:/AndroidStudioProjects/gradle-5.4.1-all/caches/transforms-2/files-2.1/16db5cec40ea9937ee11ea961a6ae475/res" />
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cd1a68f7e7923a09f9a3ea0184c52cbe/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cd1a68f7e7923a09f9a3ea0184c52cbe/res" />
+>>>>>>> 51e76156bb753c23950030e8910d83956ffdf2e2:Master/ParkingApplication/.idea/libraries/Gradle__org_tensorflow_demo_yolo_v1_0_3__aar.xml
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

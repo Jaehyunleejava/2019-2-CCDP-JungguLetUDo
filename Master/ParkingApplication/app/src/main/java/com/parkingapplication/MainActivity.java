@@ -1,27 +1,12 @@
 package com.parkingapplication;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.AssetManager;
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.util.Log;
-import android.util.Size;
-import android.util.SparseIntArray;
-import android.view.LayoutInflater;
-import android.view.Surface;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+<<<<<<< HEAD
 import com.googlecode.tesseract.android.TessBaseAPI;
 import com.parkingapplication.networks.controller.NetworkManager;
 import com.parkingapplication.networks.network.NetworkRequestTest;
@@ -69,17 +54,29 @@ public class MainActivity extends DetectorActivity implements YoloListener {
     CameraActivity CameraActivity;
 
 
+=======
+import com.parkingapplication.activity.BaseActivity;
+import com.parkingapplication.utils.MoveActivityUtil;
 
+import static com.parkingapplication.utils.FileUpload.gFileNum;
+import static com.parkingapplication.utils.FileUpload.gPrefKeyFileNum;
+>>>>>>> 51e76156bb753c23950030e8910d83956ffdf2e2
+
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mActivity = this;
-        mContext = this;
-        setInit();
+        MoveActivityUtil.getInstance().moveIntroActivity(mActivity);
+    }
 
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-//        MoveActivityUtil.getInstance().moveIntroActivity(mActivity);
+    @Override
+    public void finish() {
+        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putInt(gPrefKeyFileNum, gFileNum);
+        editor.apply();
+        super.finish();
     }
 
     @Override
@@ -87,11 +84,11 @@ public class MainActivity extends DetectorActivity implements YoloListener {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case MoveActivityUtil.REQUEST_INTRO:
-
-                setInit();
+                MoveActivityUtil.getInstance().moveYoloAct(mActivity);
                 break;
         }
     }
+<<<<<<< HEAD
 
     private void setInit() {
 //        setContentView(R.layout.activity_main);
@@ -175,4 +172,6 @@ public class MainActivity extends DetectorActivity implements YoloListener {
 
 
 
+=======
+>>>>>>> 51e76156bb753c23950030e8910d83956ffdf2e2
 }

@@ -14,27 +14,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!--쪼끄만거 번호판 결과값-->
-            <ImageView
-                android:id="@+id/imageResult"
-                android:layout_width="@dimen/size_200"
-                android:layout_height="@dimen/size_60"
-                app:layout_constraintBottom_toTopOf="@id/tvOpencv"
-                android:layout_marginBottom="@dimen/size_5"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/imageView"
-                app:srcCompat="@android:drawable/screen_background_dark_transparent" />
 
             <!--큰거 차 detect된거-->
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="@dimen/size_200"
-                android:layout_height="@dimen/size_200"
-                app:layout_constraintBottom_toTopOf="@id/tvOpencv"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginBottom="@dimen/size_5"
-                app:layout_constraintLeft_toRightOf="@id/imageResult"
-                app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView"-->
+<!--                android:layout_width="@dimen/size_200"-->
+<!--                android:layout_height="@dimen/size_200"-->
+<!--                app:layout_constraintBottom_toTopOf="@id/tvContent"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                android:layout_marginBottom="@dimen/size_5"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/img_transparent" />-->
 
             <ImageView
                 android:id="@+id/img_logo"
@@ -42,28 +32,28 @@
                 android:layout_height="@dimen/size_45"
                 android:layout_marginLeft="@dimen/size_5"
                 android:src="@drawable/img_logo"
-                android:layout_marginBottom="@dimen/size_6"
+                android:layout_marginBottom="@dimen/size_20"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent" />
 
-            <TextView
-                android:id="@+id/tvOpencv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hello Android 10"
-                android:fontFamily="@font/namsan_b"
-                android:textColor="@color/color_000000"
-                android:textSize="@dimen/size_16"
-                android:layout_marginBottom="@dimen/size_5"
-                app:layout_constraintBottom_toTopOf="@id/tvContent"
-                app:layout_constraintLeft_toRightOf="@id/img_logo"
-                app:layout_constraintRight_toRightOf="parent" />
+<!--            <TextView-->
+<!--                android:id="@+id/tvOpencv"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Hello Android 10"-->
+<!--                android:fontFamily="@font/namsan_b"-->
+<!--                android:textColor="@color/color_000000"-->
+<!--                android:textSize="@dimen/size_16"-->
+<!--                android:layout_marginBottom="@dimen/size_5"-->
+<!--                app:layout_constraintBottom_toTopOf="@id/tvContent"-->
+<!--                app:layout_constraintLeft_toRightOf="@id/img_logo"-->
+<!--                app:layout_constraintRight_toRightOf="parent" />-->
 
             <TextView
                 android:id="@+id/tvContent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/size_6"
+                android:layout_marginBottom="@dimen/size_20"
                 android:fontFamily="@font/namsan_b"
                 android:text="@string/str_main_comment"
                 android:textColor="@color/color_6F696B"
